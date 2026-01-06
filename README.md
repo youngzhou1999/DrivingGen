@@ -2,7 +2,7 @@
 
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px;">
     <a href='https://arxiv.org/abs/2601.01528'><img src='https://img.shields.io/badge/cs.CV-Paper-b31b1b?logo=arxiv&logoColor=red'></a>
-    <a href='https://drivinggen-bench.github.io/'><img src='https://img.shields.io/badge/WorldScore-Website-green?logo=googlechrome&logoColor=green'></a>
+    <a href='https://drivinggen-bench.github.io/'><img src='https://img.shields.io/badge/DrivingGen-Website-green?logo=googlechrome&logoColor=green'></a>
     <a href='https://huggingface.co/datasets/yangzhou99/DrivingGen'><img src='https://img.shields.io/badge/Dataset-Huggingface-yellow?logo=huggingface&logoColor=yellow'></a>
     <!-- <a href='https://huggingface.co/spaces/Howieeeee/WorldScore_Leaderboard'><img src='https://img.shields.io/badge/Leaderboard-Huggingface-yellow?logo=huggingface&logoColor=yellow'></a> -->
 </div>
