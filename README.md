@@ -27,15 +27,12 @@
 ## Updates <a name="updates"></a>
 
 - [03/2026] Evaluation code released.
+- [01/2026] DrivingGen is aceepted to ICLR 2026.
 - [01/2026] We release our paper on [arXiv](https://arxiv.org/abs/2601.01528) and our dataset on [Hugging Face](https://huggingface.co/datasets/yangzhou99/DrivingGen).
 
 ## Overview <a name="overview"></a>
 
-Video generation models, as one form of world models, have emerged as one of the most exciting frontiers in AI, promising agents the ability to imagine the future by modeling the temporal evolution of complex scenes. In autonomous driving, this vision gives rise to **driving world models**: generative simulators that imagine ego and agent futures, enabling scalable simulation, safe testing of corner cases, and rich synthetic data generation.
-
-**DrivingGen** is the first comprehensive benchmark for generative driving world models. It combines a diverse evaluation dataset curated from both driving datasets and internet-scale video sources — spanning varied weather, time of day, geographic regions, and complex maneuvers — with a suite of new metrics that jointly assess **visual realism**, **trajectory plausibility**, **temporal coherence**, and **controllability**.
-
-DrivingGen evaluates models from both a **visual perspective** (the realism and overall quality of generated videos) and a **robotics perspective** (the physical plausibility, consistency, and accuracy of generated trajectories). Benchmarking 14 state-of-the-art models reveals clear trade-offs: general models look better but break physics, while driving-specific ones capture motion realistically but lag in visual quality.
+**DrivingGen** is the first comprehensive benchmark for generative driving world models. It combines a diverse evaluation dataset curated from both driving datasets and internet-scale video sources — spanning varied weather, time of day, geographic regions, and complex maneuvers. DrivingGen evaluates models from both a **visual perspective** (the realism and overall quality of generated videos) and a **robotics perspective** (the physical plausibility, consistency, and accuracy of generated trajectories).
 
 ## Setup Instructions <a name="setup-instructions"></a>
 
@@ -53,13 +50,24 @@ conda create -n drivinggen python=3.10
 conda activate drivinggen
 ```
 
-#### 3. Set Environment Variables
+#### 3. Install Dependencies
 
-Set the Hugging Face and PyTorch cache paths:
-
+We recommend using the provided `environment.yml` for a full environment setup:
 ```shell
-export HF_HOME=./ckpt
-export TORCH_HOME=./ckpt
+conda env create -f environment.yml
+conda activate drivinggen
+```
+
+Alternatively, if you prefer installing into an existing environment:
+```shell
+pip install -r requirements.txt
+```
+
+Then install third-party packages:
+```shell
+cd third_parties/UniDepth && pip install -e . && cd ../..
+cd third_parties/yolov10 && pip install -e . && cd ../..
+cd third_parties/samurai && pip install -e . && cd ../..
 ```
 
 #### 4. Download Dataset
